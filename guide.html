@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="露西亚 Mod 玩法手册。查询七机体属性、技能前置、物品配方、感染净化和操作方式。">
+  <meta name="theme-color" content="#282420"><title>玩法手册 · 饥荒人物Mod：露西亚</title>
+  <link rel="icon" href="assets/favicon.webp"><link rel="stylesheet" href="style.css"><script defer src="data.js"></script><script defer src="app.js"></script>
+</head>
+<body data-page="guide">
+  <a class="skip-link" href="#main">跳到正文</a><header class="site-header" id="site-header"></header>
+  <div class="guide-layout wrap">
+    <aside class="guide-sidebar" aria-label="手册目录"><p class="eyebrow">FIELD MANUAL</p><h2>露西亚手册</h2><nav><a href="#start">01　初来乍到</a><a href="#frames">02　机体档案</a><a href="#skills">03　技能树</a><a href="#items">04　物品与配方</a><a href="#infection">05　感染与净化</a><a href="#faq">06　常见问题</a></nav><p class="sidebar-note">数值与配方依据当前 Mod 配置整理。距离以地皮为单位时，1 格等于 4 世界单位。</p></aside>
+    <main id="main" class="guide-main">
+      <div class="guide-title"><p class="eyebrow">给每一位来到永恒领域的指挥官</p><h1>从这里开始。</h1><p>把操作记在手边，把补给留在营地。</p></div>
+      <section class="guide-section" id="start"><p class="eyebrow">01 / 初来乍到</p><h2>第一次出发</h2><div class="vital-stats"><div><span>生命</span><strong id="health-stat">150</strong></div><div><span>饥饿</span><strong id="hunger-stat">100</strong></div><div><span>感染范围</span><strong>0—100</strong></div></div><div class="prose"><p>露西亚出生自带太刀，初始机体为红莲。普通理智增减对她无效，生存时需要关注饥饿、生命和感染。原版强制疯狂与启蒙仍按游戏规则判定。</p><p>太刀普攻消耗耐久，耗尽后保留物品。拿起齿轮，对太刀右键可修复 34% 耐久。学会“死线计时”后，耐久上限由 200 次提升至 400 次。</p></div><div class="note"><strong>出发前的小检查</strong><p>准备食物与护甲，带上意识锚点。照明燃料不足时，在背包右键使用荧光果补充。</p></div><div class="operation-grid"><div><kbd>右键</kbd><h3>使用物品</h3><p>意识锚点、改造核心和卸载器在物品栏使用。投影装置先放置，再提供范围效果。</p></div><div><kbd>按住 → 松开</kbd><h3>释放主动技能</h3><p>誓焰和逆冕装备太刀后，按住右键预览，松开释放。预览期间左键取消，技能结束后冷却 4 秒。</p></div><div><kbd>荧光果</kbd><h3>维持机体照明</h3><p>补充燃料后自动亮灯，亮灯时持续耗能。感染仪表下方会显示剩余照明百分比。</p></div></div></section>
+      <section class="guide-section" id="frames"><p class="eyebrow">02 / 机体档案</p><h2>选择接下来的路线</h2><p class="section-intro">点击机体查看能力。改造沿路线逐级进行，技能阵营可以独立选择。</p><div id="form-tabs" class="form-tabs" role="tablist" aria-label="选择机体"></div><div id="form-detail" class="form-detail" role="tabpanel" tabindex="0"></div><div class="route-map"><p><span>灰鸦</span>红莲 <i>→</i> 黎明 <i>→</i> 鸦羽 <i>→</i> 誓焰</p><p><span>升格</span>红莲 <i>→</i> 深渊 <i>→</i> 囚影 <i>→</i> 逆冕</p></div><div class="note"><strong>想换一条路线？</strong><p>卸载器消耗骨头碎片 ×4、绳索 ×2。每次退回前一级机体，升级材料不返还。回到红莲后，可以重新选择路线。</p></div></section>
+      <section class="guide-section" id="skills"><p class="eyebrow">03 / 技能树</p><h2>把技能点用在需要的地方</h2><p class="section-intro">共 19 个节点，最多投入 15 点。点击节点查阅说明，选择效果仅用于这本手册的阅读。</p><div class="skill-scroll"><div id="skill-tree" class="skill-tree"></div></div><div id="skill-detail" class="skill-detail" aria-live="polite"></div><p class="fine-print">高级机械、厨艺与共鸣辅助共 11 个通用节点。月亮和暗影亲和互斥，各有 4 个节点。深度休眠独立学习，其他节点按连线逐级解锁。阵营技能不附送原版阵营加成。</p></section>
+      <section class="guide-section" id="items"><p class="eyebrow">04 / 物品与配方</p><h2>营地里的准备工作</h2><div class="item-controls"><label class="search-box"><span aria-hidden="true">⌕</span><input id="item-search" type="search" placeholder="搜索物品、材料或用途" aria-label="搜索物品、材料或用途"><kbd>/</kbd></label><div class="filter-tabs" role="group" aria-label="物品类别"><button class="active" type="button" data-filter="all" aria-pressed="true">全部</button><button type="button" data-filter="core" aria-pressed="false">改造</button><button type="button" data-filter="projection" aria-pressed="false">投影</button><button type="button" data-filter="survival" aria-pressed="false">生存与支援</button></div></div><p id="item-count" class="fine-print" aria-live="polite"></p><div id="item-grid" class="item-grid"></div><p id="empty-search" class="empty-search" hidden>还没有找到这件物品，试试它的名称或制作材料。</p></section>
+      <section class="guide-section" id="infection"><p class="eyebrow">05 / 感染与净化</p><h2>让意识海保持稳定</h2><div class="prose"><p>感染按实际战斗掉血增加。每次增加量为 <strong>40 × 本次损失生命 ÷ 正常生命上限</strong>。以 150 生命上限为例，一次实际损失 15 点生命，会增加 4 点感染。普通回血不净化感染。</p></div><div class="infection-demo"><label for="infection-range">感染值 <output id="infection-value">40</output></label><input id="infection-range" type="range" min="0" max="100" value="40"><div class="infection-result"><span>对应攻击系数</span><strong id="infection-multiplier">95%</strong></div><p class="fine-print">拖动查看当前感染对伤害的影响。0—20 为 100%，60 时为 90%，100 时为 70%，区间连续线性变化。</p></div><div class="recovery-grid"><div><strong>意识锚点</strong><span>一次净化 25</span></div><div><strong>高级意识锚点</strong><span>一次净化 75</span></div><div><strong>普通寝具休眠</strong><span>每秒净化 0.25</span></div><div><strong>指挥官投影</strong><span>范围内每秒净化 0.5</span></div><div><strong>深度休眠</strong><span>每秒回血与净化各 0.5</span></div></div></section>
+      <section class="guide-section" id="faq"><p class="eyebrow">06 / 常见问题</p><h2>你可能还想知道</h2><div class="faq-list">
+        <details><summary>鸦羽的旋风是单体还是范围伤害？</summary><p>旋风锁定并跟随触发它的目标，每跳同时伤害目标周围半格地皮内的可攻击单位，每个目标每跳 7 点基础普通伤害，最多 6 跳。锁定目标死亡后，旋风消散。</p></details>
+        <details><summary>黎明的落雷会触电或点燃吗？</summary><p>黎明的追加落雷造成 20 点基础普通伤害。触电属性和点燃效果均未应用在这次追加伤害中。</p></details>
+        <details><summary>超算空间怎样触发，冷却多久？</summary><p>学会技能后，在原生近战或范围攻击命中前的 0.5 秒内走出攻击范围，可触发持续 2 秒的超算空间，冷却从触发时开始计 20 秒。范围内生物活动速度降至 1/10，玩家保持正常速度。特殊 Boss 自定义攻击的触发需要单独适配。</p></details>
+        <details><summary>无神论能直接跳过 Boss 的阶段吗？</summary><p>誓焰或逆冕的飞天斩／居合命中前，目标生命严格低于当前生命上限的 15%，且本次命中实际造成掉血时，可触发斩杀。结算遵循原版无敌、伤害上限、生命下限与强制转阶段规则。符合条件的目标进入血线时会短促闪暗红色。</p></details>
+        <details><summary>投影可以回收吗，同类投影能叠加吗？</summary><p>指挥官和四种技能投影均可右键回收。同类投影效果不叠加。指挥官投影每名露西亚只能制作一次，回收后可以重新放置。</p></details>
+        <details><summary>辅助机收集什么，怎样收纳？</summary><p>辅助机有 6 格储物空间，会拾取附近 4 格地皮内的制作材料。食材、料理、装备、武器和工具不会自动拾取。地面左键收纳，右键打开储物空间，每名露西亚最多持有一台。</p></details>
+        <details><summary>厨艺不精会影响营火烤制吗？</summary><p>只影响露西亚在烹饪锅里制作的正常料理。初始有 10% 概率变成潮湿黏糊，成功料理的正回复为正常的 75%。厨艺Ⅰ降低失败概率，Ⅱ消除这项失败判定，Ⅲ恢复正回复效率。营火烤制按原版处理。</p></details>
+        <details><summary>卸载机体后会恢复耐久或清除感染吗？</summary><p>卸载保留生命、饥饿、感染、照明燃料、技能点以及太刀耐久和冷却。机体专属的冰魄／辉光刻印会清空，改造材料不返还。红莲无法继续卸载，失败时不消耗卸载器。</p></details>
+        <details><summary>世界列表里的头像需要怎样显示？</summary><p>当前本地安装包包含 lucia 与 lucia_frontend。前者在服务器模组中启用，后者作为客户端头像补丁启用，重新启动游戏后生效。正式工坊安装方式会在订阅入口确定后补充。</p></details>
+      </div></section>
+    </main>
+  </div>
+  <footer id="site-footer"></footer>
+</body>
+</html>
